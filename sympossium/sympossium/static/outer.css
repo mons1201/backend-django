@@ -1,0 +1,18 @@
+table{
+    background-color: blue;
+    color: beige;
+    border: 10px;
+    border-style: groove;
+    border-color: darkgreen;
+    box-shadow: 10px 10px 10px wheat;
+    text-shadow: 5px 5px 1px black;
+}
+td:hover{
+    font-size: 30px;
+    background-color: black;
+    color: red;
+
+}
+th:hover{
+    text-transform: uppercase;
+}
