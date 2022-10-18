@@ -3,7 +3,10 @@ from . import views
 
 urlpatterns = [
     path('insert',views.makeCreate),
-    path('inserts',views.makeList),
+    path('',views.makeList),
+    path('show/<int:seriel>',views.makeRead),
+    path('change/<int:num>',views.makeEdit),
+    path('del/<int:unique>',views.makeDelete),
     path('page',views.makePage)
  
  

@@ -1,0 +1,36 @@
+{% extends 'home.html'%}
+{%block mohan%}
+    <div class="table-responsive">
+        <table border="10px" cellspacing="5%" cellpadding="5%" class="table table-striped text-center">
+            <thead class="text-info">
+                <tr>
+                    <th> Event Id</th>
+                    <th> Event Name</th>
+                    <th> Event Date</th>
+                    <th> Event Department</th>
+                    <th> Event Participants</th>
+                    <th> Event Winner</th>
+                </tr>
+            </thead>
+            <tbody class="text-danger">
+                {% if everything %}
+                   {% for x in everything %}
+                        <tr>
+                            <td>
+                                <a href="/buddy/show/{{x.eveId}}" class="text-decoration-none link-primary">
+                                    {{x.eveId}}
+                                </a>
+                            </td>
+                            <td>{{x.eveName}}</td>
+                            <td>{{x.eveDate}}</td>
+                            <td>{{x.eveDepartment}}</td>
+                            <td>{{x.eveParticipants}}</td>
+                            <td>{{x.eveWinner}}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+
+        </table>
+    </div>
+{%endblock mohan%}
