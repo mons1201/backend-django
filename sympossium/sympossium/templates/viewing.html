@@ -24,10 +24,14 @@
                             <td>{{x.eveName}}</td>
                             <td>{{x.eveDate}}</td>
                             <td>{{x.eveDepartment}}</td>
-                            <td>{{x.eveParticipants}}</td>
+                            <td>
+                                <a href="/buddy/person/{{x.eveId}}" class="text-decoration-none link-warning">
+                                    {{x.eveParticipants|length}}
+                                </a>
+                            </td>
                             <td>{{x.eveWinner}}</td>
                         </tr>
-                    {% endfor %}
+                    {%endfor %}
                 {% endif %}
             </tbody>
 

@@ -11,6 +11,21 @@ client=connect(host="mongodb+srv://mohan:mohan@cluster0.traigro.mongodb.net/?ret
 
 
 # Create your views here.
+def makeAddParts(req,pos):
+    if req.method=="POST":
+        eid=req.POST['eveid']
+        part=req.POST['person']
+        documents.Event.objects(eveId=eid).update_one(push__eveParticipants=part)
+        return redirect('/buddy/')
+    else:
+        receive=documents.Event.objects(eveId=pos).first()
+        return render(req,'enroll.html',{"ondru":receive})
+
+def makeViewParts(req,key):
+    receive=documents.Event.objects(eveId=key).first()
+    return render(req,'people.html',{"all":receive})
+
+
 def makeDelete(req,unique):
     receive=documents.Event.objects(eveId=unique).first()
     receive.delete()

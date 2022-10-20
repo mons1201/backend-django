@@ -7,13 +7,13 @@ class Event(Document):
     eveName=StringField()
     eveDate=DateField()
     eveDepartment=StringField()
-    eveParticipants=StringField(required=False)
+    eveParticipants=ListField(required=False)
     eveWinner=StringField(required=False)
 
     def _str__(self):
-        return "Event Information "+str(self.eveId)+" "+self.eveName+" "+str(self.eveDate)+" "+self.eveDepartment+" "+self.eveParticipants+" "+self.eveWinner+"\n"
+        return "Event Information "+str(self.eveId)+" "+self.eveName+" "+str(self.eveDate)+" "+self.eveDepartment+" "+str(self.eveParticipants)+" "+self.eveWinner+"\n"
         
-    def initiate(self,nm="",dt=datetime.utcnow(),dept="",part="",win=""):
+    def initiate(self,nm="",dt=datetime.utcnow(),dept="",part="[]",win=""):
         self.eveName=nm
         self.eveDate=dt
         self.eveDepartment=dept
