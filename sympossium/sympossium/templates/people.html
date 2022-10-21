@@ -7,8 +7,17 @@
         {%if all.eveParticipants%}
             {%for x in all.eveParticipants%}
                 <div class="mt-2 card me-2 col-lg-4 col-sm-6 p-5 bg-secondary text-light">
-                   <h3 class="card-tittle text-center">{{x}}</h3>
+                    <h3 class="card-tittle text-center">{{x}}</h3>
+                    <div class="card-body">
+                        <a href="/buddy/rem/{{all.eveId}}/{{x}}" class="btn btn-outline-dark float-start">
+                            <i class="bi bi-person-dash-fill"></i>
+                        </a>
+                        <a href="/buddy/win/{{all.eveId}}/{{x}}" class="btn btn-outline-success float-end">
+                            <i class="bi bi-trophy-fill"></i>
+                        </a>
+                    </div>
                 </div>
+
             {%endfor%}
         {%endif%}
     </div>

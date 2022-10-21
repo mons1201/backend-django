@@ -11,6 +11,15 @@ client=connect(host="mongodb+srv://mohan:mohan@cluster0.traigro.mongodb.net/?ret
 
 
 # Create your views here.
+def makeAnnounce(req,key,name):
+    documents.Event.objects(eveId=key).update_one(set__eveWinner=name)
+    return redirect('/buddy/')
+
+def makeRemove(req,key,name):
+    documents.Event.objects(eveId=key).update_one(pull__eveParticipants=name)
+    return redirect('/buddy/')
+
+
 def makeAddParts(req,pos):
     if req.method=="POST":
         eid=req.POST['eveid']

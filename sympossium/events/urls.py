@@ -9,6 +9,8 @@ urlpatterns = [
     path('del/<int:unique>',views.makeDelete),
     path('person/<int:key>',views.makeViewParts),
     path('adding/<int:pos>',views.makeAddParts),
+    path('rem/<int:key>/<str:name>',views.makeRemove),
+    path('win/<int:key>/<str:name>',views.makeAnnounce),
     path('page',views.makePage)
  
  
