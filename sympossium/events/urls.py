@@ -11,6 +11,7 @@ urlpatterns = [
     path('adding/<int:pos>',views.makeAddParts),
     path('rem/<int:key>/<str:name>',views.makeRemove),
     path('win/<int:key>/<str:name>',views.makeAnnounce),
+    path('shortlist',views.makeShort),
     path('page',views.makePage)
  
  
